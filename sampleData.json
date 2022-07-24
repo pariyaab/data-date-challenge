@@ -1,0 +1,98 @@
+[
+    {
+        "UUID": "7901d7b0-0a4f-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_encoded_string",
+            "enc_base64",
+            "date_20220410",
+            "active"
+        ],
+        "Data": "A Version 4 UUID is a universally unique identifier that is generated using random numbers. The Version 4 UUIDs produced by this site were generated using a secure random number generator"
+    },
+    {
+        "UUID": "7901da3a-0a4f-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_plain_string",
+            "enc_utf",
+            "date_20220211",
+            "active"
+        ],
+        "Data": "JSON stands for JavaScript Object Notion. It is used for sharing data between servers and clients. JavaScript allows us to load local JSON."
+    },
+    {
+        "UUID": "7901db70-0a4f-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_encoded_string",
+            "enc_base64",
+            "date_20220305",
+            "deleted"
+        ],
+        "Data": "After reading the file, we parse the data using json() function and display it."
+    },
+    {
+        "UUID": "99351cb2-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "enc_base86",
+            "date_20210305",
+            "deleted"
+        ],
+        "Data": "In case you are wondering which one will perform better if the string is too big, ‘regex.test’ is the fastest, followed by ‘string.search’ from ES6 libraries"
+    },
+    {
+        "UUID": "99351e88-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "64_encode",
+            "date_20210605",
+            "active"
+        ],
+        "Data": "I use it to search for a class in an element without jQuery and it works pretty fast and fine."
+    },
+    {
+        "UUID": "993524c8-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_plain_string",
+            "date_20210605",
+            "undefined",
+            "enc_utf"
+        ],
+        "Data": "I am tagging few languages because I just need the filtering logic on any language."
+    },
+    {
+        "UUID": "9935259a-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_plain_string",
+            "date_20220612",
+            "undefined",
+            "active"
+        ],
+        "Data": "Let's learn how to convert JavaScript array to string with or without commas. Example code included."
+    },
+    {
+        "UUID": "99352676-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_encoded_string",
+            "date_20221012",
+            "deleted"
+        ],
+        "Data": "Benchmark for a very big string and repeating the sub-string 1000 times."
+    },
+    {
+        "UUID": "9935275c-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "type_plain_string",
+            "enc_utf",
+            "date_20220812",
+            "deleted"
+        ],
+        "Data": "To convert a JavaScript array into a string, you can use the built-in Array method called toString"
+    },
+    {
+        "UUID": "99352842-0aa5-11ed-861d-0242ac120002",
+        "Tags": [
+            "enc_utf",
+            "date_20200812",
+            "undefined"
+        ],
+        "Data": "javascript convert in a string the items of an array"
+    }
+]
