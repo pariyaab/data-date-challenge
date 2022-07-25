@@ -36,4 +36,5 @@ function merge(left, right) {
 
     return sorted;
 }
+
 module.exports = mergeSort

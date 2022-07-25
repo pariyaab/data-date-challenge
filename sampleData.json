@@ -126,5 +126,59 @@
             "active"
         ],
         "Data": "TensorFlow.js is a library for machine learning in JavaScript"
+    },
+    {
+        "UUID": "70d84833-f5cd-42a1-b9ff-aed949dfce2e",
+        "Tags": [
+            "deleted",
+            "date_20190305",
+            "javascript"
+        ],
+        "Data": "If you are using ES6 you can use the spread operator"
+    },
+    {
+        "UUID": "3b339e62-57ad-416d-be77-d98e058021fc",
+        "Tags": [
+            "active",
+            "date_20180305",
+            "python",
+            "type_plain_string"
+        ],
+        "Data": "Use off-the-shelf JavaScript models or convert Python TensorFlow models to run in the browser or under Node.js"
+    },
+    {
+        "UUID": "ae4b5eda-4cfc-4905-a7a6-5cc0e29d5683",
+        "Tags": [
+            "deleted",
+            "date_20100305",
+            "c++",
+            "enc_base64",
+            "type_plain_string"
+        ],
+        "Data": "Retrain pre-existing ML models using your own data."
+    },
+    {
+        "UUID": "6c290f05-a183-472d-8050-0b7ed765188d",
+        "Tags": [
+            "active",
+            "date_20100805",
+            "enc_base64",
+            "deleted"
+        ],
+        "Data": "Build and train models directly in JavaScript using flexible and intuitive APIs."
+    },
+    {
+        "UUID": "45babbce-dfdc-497e-928e-1e8e52215483",
+        "Tags": [
+            "deleted"
+        ],
+        "Data": "Data Date Challenge"
+    },
+    {
+        "UUID": "91e37a2f-8177-4ea3-98d5-ce9269d8ca90",
+        "Tags": [
+            "date_20161005"
+        ],
+        "Data": "Performance RNN was trained in TensorFlow on MIDI from piano performances"
     }
 ]
