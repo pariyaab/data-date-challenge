@@ -3,6 +3,7 @@ const binarySearch = require("./dataSearch");
 const jsonData = require("../../../sampleData.json");
 const MultiKeyMap = require("multikeymap");
 const objectStorage = require("../models/data");
+const sortRecords = require("./resultSort")
 const { statusCodes, messages, sendResponse } = require("../../../utils");
 
 function userSearch(req, res) {
@@ -28,12 +29,15 @@ function userSearch(req, res) {
                 result.push(map.get(keys[index]));
             }
         }
-        sendResponse(res, statusCodes.SUCCESS, messages.SUCCESS,result);
+        sendResponse(res, statusCodes.SUCCESS, messages.SUCCESS, sortRecords(result, sortIndex));
     } catch (err) {
         console.log("Database ", err);
         sendResponse(res, statusCodes.FAILED, messages.FAILED);
     }
 }
+
+
+
 module.exports = {
-    userSearch
-}
+    userSearch,
+};
