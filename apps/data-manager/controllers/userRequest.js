@@ -1,4 +1,4 @@
-const mergeSort = require("./dataSort");
+const { QuickInsertionSort, QuickInsertionSortWithoutObject,me } = require("./dataSort");
 const binarySearch = require("./dataSearch");
 const jsonData = require("../../../sampleData.json");
 const MultiKeyMap = require("multikeymap");
@@ -8,6 +8,7 @@ const calculatePagination = require("./pagination");
 const { statusCodes, messages, sendResponse } = require("../../../utils");
 
 exports.userSearch = function (req, res) {
+    start = Date.now();
     console.log(req.data);
     const { tags, sortIndex, pageSize, pageIndex } = req.data;
     const map = new MultiKeyMap();
@@ -21,7 +22,7 @@ exports.userSearch = function (req, res) {
             const keys = map._keys;
             for (let index = 0; index < keys.length; ++index) {
                 let count = 0;
-                keys[index] = mergeSort(keys[index]);
+                keys[index] = QuickInsertionSortWithoutObject(keys[index]);
                 for (let j = 0; j < tags.length; j++) {
                     if (binarySearch(keys[index], tags[j]) != -1) {
                         count++;
@@ -37,6 +38,7 @@ exports.userSearch = function (req, res) {
                 messages.SUCCESS,
                 calculatePagination(sortRecords(result, sortIndex), pageSize, pageIndex)
             );
+            console.log("time consuming: ", Date.now() - start);
         } else {
             sendResponse(
                 res,
