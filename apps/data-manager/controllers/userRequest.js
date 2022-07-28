@@ -1,4 +1,5 @@
 const binarySearch = require("./dataSearch");
+const mergeSort = require("./dataSort");
 const jsonData = require("../../../sampleData.json");
 const MultiKeyMap = require("multikeymap");
 const objectStorage = require("../models/data");
@@ -25,7 +26,7 @@ exports.userSearch = function (req, res) {
 
             for (let index = 0; index < keys.length; ++index) {
                 let count = 0;
-                keys[index].sort();
+                keys[index] = mergeSort(keys[index]);
 
                 for (let j = 0; j < tags.length; j++) {
                     if (binarySearch(keys[index], tags[j]) != -1) {
@@ -36,7 +37,7 @@ exports.userSearch = function (req, res) {
                     result.push(map.get(keys[index]));
                 }
             }
-           
+
             if (result.length === 0) {
                 sendResponse(res, statusCodes.SUCCESS, messages.SUCCESS, "Data not fount");
             } else {

@@ -15,7 +15,7 @@ function merge(left, right) {
     // Break out of loop if any one of the array gets empty
     while (left.length && right.length) {
         // Pick the smaller among the smallest element of left and right sub arrays
-        if (left[0].value < right[0].value) {
+        if (left[0] < right[0]) {
             arr.push(left.shift());
         } else {
             arr.push(right.shift());

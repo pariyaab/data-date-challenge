@@ -22,7 +22,7 @@ function setHeaders(res) {
 }
 
 function sendResponse(res, status, message, data = {}) {
-    // setHeaders(res);
+    setHeaders(res);
     res.end(JSON.stringify({ statuscode: status, messages: message, result: data }));
 }
 

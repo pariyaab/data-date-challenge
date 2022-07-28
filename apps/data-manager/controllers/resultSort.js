@@ -1,4 +1,5 @@
-const mergeSort = require("./dataSort");
+
+const quickSort = require("./quicksort");
 function sortRecords(result, sortIndex) {
     let tagsInSortIndex = [];
     let remainingList = [];
@@ -12,7 +13,8 @@ function sortRecords(result, sortIndex) {
         }
     }
     if (tagsInSortIndex.length > 0) {
-        sortedTags = mergeSort(tagsInSortIndex);
+
+        sortedTags = quickSort(tagsInSortIndex, 0, tagsInSortIndex.length - 1);
         sortedResult = sortedTags.map(function (e) {
             return result[e.index];
         });

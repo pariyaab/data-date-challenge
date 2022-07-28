@@ -27,20 +27,22 @@ function tags() {
         "c",
         "java",
         "go",
-        "nodejs",
+        "programming",
+        "go",
         "date_20221012",
         "date_20120512",
         "date_20000305",
         "date_20221015",
-        "date_20210912",
+        "mocha testing framework",
         "type_encoded_string",
         "datadate",
         "type_plain_string",
         "deleted",
+        "technology",
         "enc_utf",
         "enc_base64",
         "active",
-        "date_20161015",
+        "part_software_group",
         "date_20180909",
         "date_20230410",
         "isDeleted",
@@ -56,7 +58,7 @@ function tags() {
 }
 
 function writeFile() {
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 25000; i++) {
         let obj = {
             UUID: uuidv4(),
             Tags: tags(),
@@ -64,8 +66,8 @@ function writeFile() {
         };
         const data = JSON.stringify(obj);
         try {
-            fs.appendFileSync("user.json", data);
-            fs.appendFileSync("user.json", ",");
+            fs.appendFileSync("dataGenerated.json", data);
+            fs.appendFileSync("dataGenerated.json", ",");
         } catch (error) {
             console.error(error);
         }
