@@ -1,4 +1,3 @@
-const { QuickInsertionSort, QuickInsertionSortWithoutObject,me } = require("./dataSort");
 const binarySearch = require("./dataSearch");
 const jsonData = require("../../../sampleData.json");
 const MultiKeyMap = require("multikeymap");
@@ -7,10 +6,11 @@ const sortRecords = require("./resultSort");
 const calculatePagination = require("./pagination");
 const { statusCodes, messages, sendResponse } = require("../../../utils");
 
+//function for user reqeust and resturn sorted result
 exports.userSearch = function (req, res) {
     start = Date.now();
-    console.log(req.data);
     const { tags, sortIndex, pageSize, pageIndex } = req.data;
+    // use multikey map DS for sotre tags as a key and object as a value
     const map = new MultiKeyMap();
     try {
         if (tags.length > 0) {
@@ -20,9 +20,13 @@ exports.userSearch = function (req, res) {
                 map.set(jsonData[i].Tags, item);
             }
             const keys = map._keys;
+            // search in keys to find all object with user tag request
+            // use binarySearch for searching
+
             for (let index = 0; index < keys.length; ++index) {
                 let count = 0;
-                keys[index] = QuickInsertionSortWithoutObject(keys[index]);
+                keys[index].sort();
+
                 for (let j = 0; j < tags.length; j++) {
                     if (binarySearch(keys[index], tags[j]) != -1) {
                         count++;
@@ -32,12 +36,18 @@ exports.userSearch = function (req, res) {
                     result.push(map.get(keys[index]));
                 }
             }
-            sendResponse(
-                res,
-                statusCodes.SUCCESS,
-                messages.SUCCESS,
-                calculatePagination(sortRecords(result, sortIndex), pageSize, pageIndex)
-            );
+           
+            if (result.length === 0) {
+                sendResponse(res, statusCodes.SUCCESS, messages.SUCCESS, "Data not fount");
+            } else {
+                //send response to use if all of the things was ok
+                sendResponse(
+                    res,
+                    statusCodes.SUCCESS,
+                    messages.SUCCESS,
+                    calculatePagination(sortRecords(result, sortIndex), pageSize, pageIndex)
+                );
+            }
             console.log("time consuming: ", Date.now() - start);
         } else {
             sendResponse(

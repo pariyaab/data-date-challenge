@@ -1,29 +1,25 @@
-const { QuickInsertionSort, QuickInsertionSortWithoutObject } = require("./dataSort");
+const mergeSort = require("./dataSort");
 function sortRecords(result, sortIndex) {
-    let tag_in_sortIndex = [];
-    let remaining_list = [];
+    let tagsInSortIndex = [];
+    let remainingList = [];
     let sortedResult = [];
     for (i = 0; i < result.length; i++) {
         if (result[i].tags.length > sortIndex) {
             const obj = { index: i, value: result[i].tags[sortIndex] };
-            tag_in_sortIndex.push(obj);
+            tagsInSortIndex.push(obj);
         } else {
-            remaining_list.push(result[i]);
+            remainingList.push(result[i]);
         }
     }
-    if (tag_in_sortIndex.length > 0) {
-
-        // tag_in_sortIndex.sort(function (a, b) {
-        //     return a.value > b.value || (a.value === b.value) - 1;
-        // });
-
-        tags_strings = QuickInsertionSort(tag_in_sortIndex);
-
-        sortedResult = tag_in_sortIndex.map(function (e) {
+    if (tagsInSortIndex.length > 0) {
+        sortedTags = mergeSort(tagsInSortIndex);
+        sortedResult = sortedTags.map(function (e) {
             return result[e.index];
         });
-        sortedResult.push.apply(sortedResult, remaining_list);
+
+        sortedResult.push.apply(sortedResult, remainingList);
     }
+
     return sortedResult;
 }
 
