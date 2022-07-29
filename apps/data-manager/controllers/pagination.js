@@ -6,6 +6,7 @@ function calculatePagination(sortedResult, pageSize, pageIndex) {
     while (sortedResult.length) {
         results.push(sortedResult.splice(0, pageSize));
     }
+    //error handling
     if (pageIndex < results.length) {
         return results[pageIndex];
     } else {
