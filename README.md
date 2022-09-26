@@ -13,4 +13,4 @@ PageSize : 10
 pageIndex : 3
 
 # how to use
-you should use postman and run index.js file and send request to localhost/search
+you should use postman and run index.js file and send request to http://localhost/search
